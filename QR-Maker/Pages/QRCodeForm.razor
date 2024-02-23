@@ -1,0 +1,28 @@
+﻿@page "/qrcodeform"
+
+<h3>QRCodeForm</h3>
+
+<EditForm Model="@model" OnValidSubmit="@HandleValidSubmit">
+    <div class="form-group">
+        <label for="text">Text:</label>
+        <InputText id="text" class="form-control" @bind-Value="model.Text" />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate QR Code</button>
+</EditForm>
+
+@code {
+    // Define a class to hold the form data
+    public class QRCodeModel
+    {
+        public string Text { get; set; }
+    }
+
+    // Create an instance of the class
+    private QRCodeModel model = new QRCodeModel();
+
+    // Define a method to handle the form submission
+    private void HandleValidSubmit()
+    {
+        // TODO: Add logic to generate and display the QR code
+    }
+}
